@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>NoordhoffPatcher</title>
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <style type="text/css">
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        min-width: 260px;
+        max-width: 100%;
+        position: relative;
+        vertical-align:middle;
+        color: white;
+        background-color: #202020;
+      }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h3 style="position: relative; left: 10px;">NOORDHOFF PATCHER</h3>
+    <label class="switch right" style="position: absolute; right: 0px; top: 3px;">
+      <input id="slider_alles" type="checkbox">
+      <div class="slider round"></div>
+    </label>
+    <hr style="border-color: #ff8000;">
+  
+    <div>
+      <span>Knop</span>
+      <label class="switch right">
+        <input id="slider_knop" type="checkbox">
+        <div class="slider round"></div>
+      </label>
+    </div>
+    <div>
+      <span>Vul automatisch in</span>
+      <label class="switch right">
+        <input id="slider_auto" type="checkbox">
+        <div class="slider round"></div>
+      </label>
+    </div>
+  </body>
+</html>
+

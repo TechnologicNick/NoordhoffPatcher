@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  
+  "name": "NoordhoffPatcher",
+  "description": "Deze Chrome Extensie vult alle antwoorden in!",
+  "version": "0.3",
+  
+  "author": "TechnologicNick",
+
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_popup": "popup.html"
+  },
+  "icons": { "16": "icons/icon16.png",
+             "48": "icons/icon48.png",
+            "128": "icons/icon128.png" },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "*://player.online.noordhoff.nl/*",
+    "*://numpscormprd.azurewebsites.net/Content/*",
+    "*://cdpcontent.toegang.nu/*",
+    "*://cdp.contentdelivery.nu/*"
+  ],
+  "content_scripts" : [{
+    "matches": ["*://player.online.noordhoff.nl/*", "*://numpscormprd.azurewebsites.net/Content/*"],
+    "js": ["slave/injector.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  },{
+    "matches": ["*://cdpcontent.toegang.nu/*", "*://cdp.contentdelivery.nu/*" /* , "*://*.digitaal.noordhoff.nl/*" */],
+    "js": ["slave_digilino/injector.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }],
+  "web_accessible_resources": [
+    "slave/*",
+    "slave_digilino/*"
+  ]
+}

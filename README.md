@@ -1,11 +1,11 @@
 # NoordhoffPatcher
-A Google Chrome extension that automatically fills in answers for online homework by Noordhoff Uitgevers.
+A Google Chrome extension that automatically fills in answers for online homework of subjects published by Noordhoff Uitgevers.
 <p align="center">
   <img src="https://i.imgur.com/tcUoEIl.png">
 </p>
 
 # About
-I wrote this somewhere in my first year of highschool. It was still a userscript and was able to fill in answers for the subjects Dutch, French, German and mathematics. In the third year I turned it into a Chrome extension. Noordhoff Uitgevers released their new online homework platform, Digilino, which I also made the extension fill in the answers for.
+I wrote this somewhere in my first year of highschool. It was still a userscript and was able to fill in answers for the subjects Dutch, French, German and mathematics. In the third year I turned it into a Chrome extension. Noordhoff Uitgevers then released their new online homework platform, Digilino. I made the extension fill in the answers for the new platform too, which added science to the list of subjects.
 
 # Installation
 1. Clone the git repository

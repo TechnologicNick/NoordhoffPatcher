@@ -21,7 +21,7 @@ function restore_options() {
 document.addEventListener('DOMContentLoaded', function () {
     var sliders = document.getElementsByClassName("switch");
     for(i = 0; i < sliders.length; i++){
-        $(sliders[i].children[1]).addClass('noAnim');
+        sliders[i].children[1].classList.add('noAnim');
     }
     
     restore_options();
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     setTimeout(function() {
         for(i = 0; i < sliders.length; i++){
-            $(sliders[i].children[1]).removeClass('noAnim');
+            sliders[i].children[1].classList.remove('noAnim');
         }
     }, 100);
     

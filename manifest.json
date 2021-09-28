@@ -28,7 +28,7 @@
     "run_at": "document_end",
     "all_frames": true
   },{
-    "matches": ["*://cdpcontent.toegang.nu/*", "*://cdp.contentdelivery.nu/*" /* , "*://*.digitaal.noordhoff.nl/*" */],
+    "matches": ["*://cdpcontent.toegang.nu/*", "*://cdp.contentdelivery.nu/*", "*://*.digitaal.noordhoff.nl/*"],
     "js": ["slave_digilino/injector.js"],
     "run_at": "document_end",
     "all_frames": true

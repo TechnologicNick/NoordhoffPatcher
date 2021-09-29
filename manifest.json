@@ -28,13 +28,19 @@
     "run_at": "document_end",
     "all_frames": true
   },{
-    "matches": ["*://cdpcontent.toegang.nu/*", "*://cdp.contentdelivery.nu/*", "*://*.digitaal.noordhoff.nl/*"],
+    "matches": ["*://cdpcontent.toegang.nu/*", "*://cdp.contentdelivery.nu/*"],
     "js": ["slave_digilino/injector.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  },{
+    "matches": ["*://*.digitaal.noordhoff.nl/*"],
+    "js": ["slave_reactapp/injector.js"],
     "run_at": "document_end",
     "all_frames": true
   }],
   "web_accessible_resources": [
     "slave/*",
-    "slave_digilino/*"
+    "slave_digilino/*",
+    "slave_reactapp/*"
   ]
 }

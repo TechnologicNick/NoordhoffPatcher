@@ -145,25 +145,19 @@ function npShowAnswers(){
     
     
     }else if (interaction.type === "openQuestionInteraction"){
-        var textarea = interactionContainers[i].getElementsByClassName("openQuestionArea")[0];
-        textarea.value = "";
+        let texteditor = interactionContainers[i].querySelector("iframe").contentDocument.body;
     
-        var answers = interactionContainers[i].getElementsByClassName("answer");
-        for (var j = 0; j < answers.length; j++){
-            var answerText = answers[j].innerHTML.toString();
-            try{
-                answerText = atob(answerText);
-            }catch(err){
-                //console.log("Answer is not base64 encoded")
-            }
-            answerText = answerText.replace(/<(.*?)>/g, "").replace(/&nbsp;/g, " ").trim();
-            
-            console.log("Answer: " + answerText);
-            
-            textarea.value += answerText;
-            if(j+1 < answers.length) textarea.value += "\n";
+        let answerElement = interactionContainers[i].querySelector("#plselfScoreFeedback > div.plselfScoreFeedbackAnswer.clearfix");
+        let answer = answerElement.innerText.trim().replaceAll(/ +/, " ").replaceAll(/\n /, "\n").replaceAll(/\n{3,}/, "\n");
+        
+        let answerHTML = answer.split("\n").map(line => `<p>${line}</p>`).join("\n");
+
+        if (texteditor.getAttribute("contenteditable") !== "false") {
+            texteditor.innerHTML = answerHTML;
+            console.log("Set innerHTML to", texteditor.innerHTML);
+        } else {
+            console.log("Not entering answer", answerHTML);
         }
-    
     
     
     }else if (interaction.type === "multipleToggleInteraction"){
